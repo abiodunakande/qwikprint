@@ -5,14 +5,14 @@ export interface FastlyAdapterOptions extends ServerAdapterOptions {
 function fastlyAdapter(opts: FastlyAdapterOptions = {}) {
   return viteAdapter({
     name: "fastly",
-    origin: process.env.URL || "http://127.0.0.1:7677",
+    origin: process.env.URL || "http://127.0.0.1:7676",
     ssg: opts.ssg,
     cleanStaticGenerated: true,
     config() {
       return {
         ssr: {
             target: "webworker",
-            noExternal: true
+            noExternal: true,
         },
         build: {
           ssr: true
@@ -22,6 +22,7 @@ function fastlyAdapter(opts: FastlyAdapterOptions = {}) {
     }
   });
 }
+
 const fastlyAdaptor = fastlyAdapter;
 export {
   fastlyAdapter,

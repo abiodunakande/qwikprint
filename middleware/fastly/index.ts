@@ -10,7 +10,7 @@ import { _deserializeData, _serializeData, _verifySerializable } from '@builder.
 import { setServerPlatform } from '@builder.io/qwik/server';
 import { TextEncoderStream } from "@stardazed/streams-text-encoding";
 
-import { isStaticPath } from '@qwik-city-static-paths';
+import staticPaths  from 'virtual:static-paths'
 
 // @builder.io/qwik-city/middleware/fastly
 
